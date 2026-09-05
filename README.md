@@ -1,5 +1,7 @@
 # Mentorly
 
+[![Mentorly checks](https://github.com/449m788hdp-eng/mentorly/actions/workflows/checks.yml/badge.svg)](https://github.com/449m788hdp-eng/mentorly/actions/workflows/checks.yml)
+
 Private, Ukrainian-first tutor marketplace MVP. Built with React, Vinext, Cloudflare Workers, D1 and R2 using the Sites starter.
 
 ## Working flows
@@ -37,11 +39,11 @@ Favorites, profiles, lists, messages, bookings, tutor profiles, reviews and uplo
 
 ## Development
 
-`npm install`, then `npm run dev`. For local authenticated flows, navigate to `/signin-with-chatgpt?return_to=/`. The starter simulates a local identity; it never includes that identity in production.
+`npm ci`, then `npm run dev`. For local authenticated flows, navigate to `/signin-with-chatgpt?return_to=/`. The starter simulates a local identity; it never includes that identity in production.
 
 Generate schema migrations with `npm run db:generate`. Local D1 migrations use the generated Worker configuration and `.wrangler/state` as the persistence directory. Sites applies the checked-in migration during deployment.
 
-`npm run build` compiles the Worker and client. `npx tsc --noEmit` checks TypeScript. `scripts/smoke.mjs` checks catalog filtering, identity boundaries, persistence and the demo journey against an already-running local server.
+`npm run build` compiles the Worker and client. `npm run typecheck` checks TypeScript. `scripts/smoke.mjs` checks catalog filtering, identity boundaries, persistence and the demo journey against an already-running local server.
 
 The search screen exposes the optional imperative `search_tutors` WebMCP tool when `document.modelContext` exists. No supported WebMCP validation context was available in this task; registration/behavior were not browser-verified. Browser UI testing was not requested and was not performed.
 
@@ -55,3 +57,13 @@ Illustrative portraits used under the Unsplash License: https://unsplash.com/lic
 - Morten Pedersen: https://unsplash.com/photos/smiling-man-Z-bgD8pMv30
 - The Connected Narrative: https://unsplash.com/photos/a-man-smiling-for-the-camera-N8lRH2uxih4
 - Andre Tan: https://unsplash.com/photos/smiling-man-nX0mSJ999Og
+
+## GitHub and publishing
+
+The canonical repository is [449m788hdp-eng/mentorly](https://github.com/449m788hdp-eng/mentorly), branch `main`. GitHub Actions runs TypeScript checks and a production build on every push to `main` and pull request targeting `main`. The workflow uses locked dependencies, pinned action revisions and read-only repository permissions; it needs no application secrets.
+
+[Open the hosted Mentorly site](https://mentorly-learning.zzaydik.chatgpt.site). Sites publishing is a separate operation: this repository does **not** contain an automatic GitHub-to-Sites deployment webhook. To publish a change, check out the exact GitHub commit, validate it, push that same commit to the configured Sites source repository using a short-lived credential, package the build, and save and deploy its version. This preserves a traceable source revision across GitHub and the hosted site. Never commit credentials, local data or build output.
+
+## Interface styling
+
+The interface uses the Apple system font on iOS/macOS, capsule buttons, rounded inset-photo cards, subtle translucent navigation and a floating mobile dock. `app/globals.css` defines shared light/dark tokens and base layouts; `app/ios.css` applies product styling after those layouts without modifying the shared Shadcn components. Mobile controls keep 44–48px touch targets, inputs use 16px text, the dock respects safe areas and motion follows the device accessibility preference.

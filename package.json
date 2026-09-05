@@ -11,7 +11,8 @@
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt",
-    "db:generate": "drizzle-kit generate"
+    "db:generate": "drizzle-kit generate",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "react": "19.2.6",
@@ -54,5 +55,10 @@
     "wrangler": "4.92.0",
     "drizzle-kit": "0.31.10"
   },
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/449m788hdp-eng/mentorly.git"
+  },
+  "homepage": "https://mentorly-learning.zzaydik.chatgpt.site"
 }

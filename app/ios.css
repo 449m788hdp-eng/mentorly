@@ -1,0 +1,481 @@
+/* Product-level iOS styling; shared Shadcn primitives remain reusable. */
+body {
+  letter-spacing: -0.015em;
+}
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+.button,
+.social-btn,
+.quiet-button {
+  min-height: 48px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+.primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--primary) 18%, transparent);
+}
+.button.outline,
+.social-btn {
+  background: var(--card);
+}
+.dark-btn {
+  background: var(--foreground);
+  color: var(--background);
+}
+.button:active,
+.social-btn:active,
+.heart-button:active {
+  transform: scale(0.97);
+}
+.brand {
+  letter-spacing: -1.4px;
+}
+.brand-icon {
+  border-radius: 14px;
+  transform: none;
+  box-shadow: 0 3px 10px #d75a2420;
+}
+.topbar,
+.app-header {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(160%);
+  border-bottom: 1px solid var(--border);
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 35;
+}
+.app-sidebar {
+  background: var(--glass) !important;
+}
+.app-sidebar .nav-link {
+  height: 48px;
+  border-radius: var(--radius-control);
+}
+.app-sidebar .nav-link[data-active='true'],
+.dark .app-sidebar .nav-link[data-active='true'] {
+  background: color-mix(in srgb, var(--primary) 11%, var(--card));
+  color: var(--primary);
+}
+.app-header-actions > button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.sidebar-tip,
+.user-mini {
+  border-radius: 20px;
+}
+.page-heading h1 {
+  font-weight: 650;
+  letter-spacing: -1.2px;
+}
+.hero h1 {
+  font-weight: 650;
+  letter-spacing: -2.4px;
+}
+.hero-photo {
+  border-radius: 36px;
+  box-shadow: var(--panel-shadow);
+}
+.floating-note,
+.floating-match {
+  border-radius: 22px;
+  background: var(--glass);
+}
+.ai-banner,
+.dark .ai-banner {
+  background: linear-gradient(
+    125deg,
+    var(--card),
+    color-mix(in srgb, var(--primary) 7%, var(--card))
+  );
+  border: 1px solid color-mix(in srgb, var(--primary) 12%, var(--border));
+  border-radius: var(--radius-card);
+  box-shadow: var(--panel-shadow);
+}
+.ai-icon {
+  border-radius: 16px;
+}
+.query-box,
+.dark .query-box {
+  border-radius: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 7px 7px 7px 18px;
+  box-shadow: 0 2px 6px #1d1d1f04;
+}
+.query-box:focus-within {
+  outline: 3px solid color-mix(in srgb, var(--primary) 22%, transparent);
+  outline-offset: 2px;
+}
+.query-box input {
+  min-width: 0;
+  font-size: 16px;
+}
+.query-box input:focus-visible {
+  outline: none;
+}
+.query-box > .button {
+  border-radius: 18px;
+}
+.subject-chips button,
+.suggestions button {
+  min-height: 44px;
+  padding: 10px 17px;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.subject-chips button.active {
+  background: var(--foreground);
+  color: var(--background);
+  border-color: var(--foreground);
+}
+.tutor-grid,
+.app-main .tutor-grid {
+  gap: 22px;
+}
+.tutor-card {
+  padding: 8px;
+  border-radius: var(--radius-card);
+  border: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
+  background: var(--card);
+  box-shadow: var(--panel-shadow);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+.tutor-photo {
+  overflow: hidden;
+  border-radius: 21px;
+}
+.tutor-body,
+.app-main .tutor-body {
+  padding: 18px 12px 12px;
+}
+.heart-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fffffff0;
+  color: #434348;
+}
+.heart-button.saved {
+  color: #c63e38;
+}
+.photo-tag {
+  border-radius: 999px;
+  background: #fffffff0;
+  color: #303036;
+}
+.tutor-footer {
+  margin-top: 16px;
+}
+.tutor-footer > a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.profile-link {
+  min-height: 44px;
+  align-items: center;
+}
+.match,
+.dark .match {
+  border-radius: 16px;
+  background: color-mix(in srgb, #62a87b 10%, var(--card));
+  color: var(--foreground);
+}
+.filter-panel,
+.booking-card,
+.settings-content,
+.onboarding-form,
+.empty-state,
+.tutor-welcome,
+.teach-banner {
+  border-radius: var(--radius-card);
+  box-shadow: var(--panel-shadow);
+}
+.filter-panel,
+.settings-content,
+.onboarding-form,
+.empty-state {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.education-card,
+.lesson-card,
+.theme-options > button,
+.upload-field,
+.security-session,
+.publish-summary {
+  border-radius: 20px;
+}
+.detail-photo {
+  border-radius: 24px;
+}
+.detail-tags > span,
+.parsed-tags > span:not(:first-child),
+.availability-pill {
+  border-radius: 999px;
+}
+.text-input,
+.picker {
+  border-radius: var(--radius-control) !important;
+  min-height: 48px;
+  background: color-mix(in srgb, var(--muted) 40%, var(--card));
+  font-size: 16px !important;
+}
+.text-area,
+.chat-compose textarea {
+  border-radius: var(--radius-control);
+  font-size: 16px;
+  background: color-mix(in srgb, var(--muted) 40%, var(--card));
+}
+.check-choice {
+  min-height: 44px;
+}
+.detail-tabs,
+.settings-tab-list {
+  background: var(--muted);
+  border: 0;
+  border-radius: 20px !important;
+  padding: 5px !important;
+  gap: 4px !important;
+}
+.detail-tabs {
+  overflow-x: auto;
+}
+.detail-tabs button,
+.settings-tab-list button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 16px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.detail-tabs button[data-active],
+.settings-tab-list button[data-active] {
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: 0 2px 5px #0000000a;
+}
+.detail-tabs button::after {
+  display: none;
+}
+.availability-days button,
+.time-grid button,
+.calendar-nav button {
+  min-height: 44px;
+  border-radius: 16px;
+}
+.modal {
+  border-radius: var(--radius-sheet) !important;
+  padding: 32px !important;
+  box-shadow: 0 24px 90px #00000026;
+  overscroll-behavior: contain;
+}
+.modal-title {
+  padding-right: 28px;
+}
+.modal [data-slot='dialog-close'] {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  top: 12px;
+  right: 12px;
+  background: var(--muted);
+}
+[data-slot='select-content'] {
+  border-radius: 20px;
+  padding: 6px;
+}
+[data-slot='select-item'] {
+  min-height: 44px;
+  border-radius: 12px;
+}
+.chat-history {
+  background: var(--background);
+  border-radius: 24px;
+}
+.chat-bubble,
+.dark .chat-bubble {
+  border-radius: 22px 22px 6px 22px;
+  background: color-mix(in srgb, var(--primary) 12%, var(--card));
+  color: var(--foreground);
+}
+.conversation-row {
+  border-radius: 18px;
+  padding: 14px;
+}
+.notice {
+  border-radius: 22px;
+  box-shadow: var(--panel-shadow);
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .tutor-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px #1d1d1f0d;
+  }
+}
+@media (max-width: 767px) {
+  .app-main {
+    padding-bottom: calc(106px + env(safe-area-inset-bottom));
+  }
+  .app-header {
+    padding-top: env(safe-area-inset-top);
+    height: calc(76px + env(safe-area-inset-top));
+  }
+  .app-header-actions {
+    gap: 8px;
+  }
+  .topbar {
+    padding-top: max(12px, env(safe-area-inset-top));
+  }
+  .bottom-nav {
+    left: max(12px, env(safe-area-inset-left));
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    height: 76px;
+    padding: 6px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    background: var(--glass);
+    box-shadow: 0 8px 40px #00000012;
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    backdrop-filter: blur(24px) saturate(160%);
+  }
+  .bottom-nav > a {
+    flex: 1;
+    min-width: 44px;
+    border-radius: 23px;
+    gap: 5px;
+  }
+  .bottom-nav a.active {
+    background: color-mix(in srgb, var(--primary) 10%, transparent);
+  }
+  .bottom-nav a.center-nav > span {
+    width: 36px;
+    height: 34px;
+    margin-top: 0;
+    border-radius: 13px;
+    color: var(--primary-foreground);
+    box-shadow: none;
+  }
+  .bottom-nav small {
+    font-size: 10px;
+  }
+  .notice {
+    bottom: calc(104px + env(safe-area-inset-bottom));
+  }
+  .button,
+  .page-heading > .button,
+  .booking-card .button {
+    font-size: 14px;
+  }
+  .query-box {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .query-box input {
+    font-size: 16px;
+  }
+  .ai-banner {
+    padding: 20px;
+  }
+  .modal {
+    padding: 28px 22px !important;
+    max-height: 85dvh;
+  }
+  .modal-description {
+    font-size: 14px !important;
+  }
+  .hero h1 {
+    letter-spacing: -1.6px;
+  }
+  .hero-photo {
+    border-radius: 28px;
+  }
+}
+@media (max-width: 480px) {
+  .tutor-grid,
+  .app-main .tutor-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .tutor-photo,
+  .app-main .tutor-photo {
+    height: 260px;
+  }
+  .name-row h3,
+  .app-main .name-row h3 {
+    font-size: 19px;
+  }
+  .tutor-body,
+  .app-main .tutor-body {
+    padding: 18px 14px 10px;
+  }
+  .tutor-meta,
+  .app-main .tutor-meta {
+    font-size: 13px;
+  }
+  .subject-label,
+  .profile-link,
+  .app-main .profile-link {
+    font-size: 14px;
+  }
+  .photo-tag {
+    font-size: 12px;
+  }
+  .query-box > .button {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .filter-panel {
+    padding: 18px;
+  }
+  .detail-tabs button {
+    padding: 10px 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .button,
+  .social-btn,
+  .heart-button,
+  .tutor-card,
+  .tutor-photo img {
+    transition: none;
+  }
+  .button:active,
+  .social-btn:active,
+  .heart-button:active,
+  .tutor-card:hover,
+  .tutor-card:hover .tutor-photo img {
+    transform: none;
+  }
+}
